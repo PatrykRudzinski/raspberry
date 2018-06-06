@@ -36,6 +36,18 @@
       text-align: center;
       font-size: 1.25rem;
     }
+
+    .popup__error {
+      font-size: 1.5rem;
+      color: tomato;
+      padding: 10px;
+      width: 80%;
+
+      p {
+        margin: 5px 0;
+      }
+    }
+
     .popup__btn {
       cursor: pointer;
       width: 90%;

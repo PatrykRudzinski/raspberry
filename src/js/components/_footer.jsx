@@ -1,6 +1,7 @@
 import React from 'react';
 
 class Footer extends React.Component {
+
     render() {
         return <footer className={'page-footer'}>
             <div className={'footer__copy'}>&copy; 2014 Raspberry kingdom</div>
@@ -12,7 +13,7 @@ class Footer extends React.Component {
             </nav>
             <div className={'footer__design'}>Design by <span>Wizard of Oz</span></div>
         </footer>
-    }
+    };
 }
 
 export {Footer};

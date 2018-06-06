@@ -5,15 +5,14 @@
     justify-content: center;
 
     .nav__menu {
-
       list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%;
       margin: 27px 25%;
-      .menu__item{
 
+      .menu__item {
         text-transform: uppercase;
         font-family: $aleo;
         font-size: 1.20rem;

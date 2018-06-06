@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import {Menu} from "./components/_menu.jsx";
 import {Hero} from "./components/_hero.jsx";
 import {Footer} from "./components/_footer.jsx";
@@ -12,14 +13,14 @@ class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            popupVisible: true
-        }
-    }
+            popupVisible: false
+        };
+    };
 
     togglePopup = () => {
         this.setState({
             popupVisible: !this.state.popupVisible
-        })
+        });
     };
 
     render() {
@@ -29,8 +30,9 @@ class App extends React.Component {
             <Footer/>
             {this.state.popupVisible && <Popup closePopup={this.togglePopup}/>}
         </div>
-    }
+    };
 }
+
 
 ReactDOM.render(
     <App/>,

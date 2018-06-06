@@ -3,13 +3,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-70%);
 
   .hero__title {
     font-family: $bakery;
+    text-align: center;
     font-size: 10rem;
     font-weight: 300;
     color: #fefefe;
-    padding-top: 2rem;
   }
 
   .hero__btn {
