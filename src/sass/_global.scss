@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: calc(10px + 0.12vw);
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+//.container {
+//  max-width: 1200px;
+//  margin: 0 auto;
+//}
+
+@font-face {
+  font-family: 'aleoregular';
+  src: url('./fonts/aleo-regular-webfont.woff2') format('woff2'),
+  url('./fonts/aleo-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'aleobold';
+  src: url('./fonts/aleo-bold-webfont.woff2') format('woff2'),
+  url('./fonts/aleo-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bakeryregular';
+  src: url('./fonts/bakery-webfont.woff2') format('woff2'),
+  url('./fonts/bakery-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$aleo: 'aleoregular', Fallback, serif;
+$aleoBold: 'aleobold', Fallback, serif;
+$bakery: 'bakeryregular', Fallback, sans-serif;
+
+//Remove styling from ul
+
+ul {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+}
+
+.site-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #888;
+}
+
+body {
+  height: 200vh;
+}
