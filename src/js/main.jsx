@@ -8,12 +8,26 @@ import {Popup} from "./components/_popup.jsx";
 require('../sass/main.scss');
 
 class App extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            popupVisible: true
+        }
+    }
+
+    togglePopup = () => {
+        this.setState({
+            popupVisible: !this.state.popupVisible
+        })
+    };
+
     render() {
         return <div>
             <Menu/>
-            <Hero/>
+            <Hero openPopup={this.togglePopup}/>
             <Footer/>
-            <Popup/>
+            {this.state.popupVisible && <Popup closePopup={this.togglePopup}/>}
         </div>
     }
 }

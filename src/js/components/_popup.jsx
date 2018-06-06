@@ -1,6 +1,15 @@
 import React from 'react';
 
 class Popup extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            pass: ''
+        }
+    }
+
     test = (e) => {
         e.preventDefault();
 
@@ -19,18 +28,47 @@ class Popup extends React.Component {
             return response.json();
         }).then(function(data) {
             console.log(data);
+            this.props.closePopup();
         });
+    };
+
+    submitHandle = (e) => {
+        this.test(e);
+    };
+
+    updateEmail = (e) => {
+        this.setState({
+            email: e.target.value
+        })
+    };
+
+    updatePass = (e) => {
+        this.setState({
+            pass: e.target.value
+        })
     };
 
     render() {
         return <div className={'login-popup'}>
-            <form>
+            <form
+                className={'popup__form'}
+                onSubmit={this.submitHandle}
+            >
                 <h3 className={'popup__title'}>Are you a Raspberry Knight?</h3>
-                <input type="text" placeholder={'Email'}/>
-                <input type="password" placeholder={'Password'}/>
-                <button type='submit' onClick={this.test}>Log in</button>
+                <input
+                    className={'popup__input'}
+                    type="text"
+                    placeholder={'Email'}
+                    onInput={this.updateEmail}
+                />
+                <input
+                    className={'popup__input'}
+                    type="password"
+                    placeholder={'Password'}
+                    onInput={this.updatePass}
+                />
+                <button className={'popup__btn'} type='submit'>Log in</button>
             </form>
-
         </div>
     }
 }
