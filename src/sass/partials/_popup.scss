@@ -48,17 +48,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 40px;
-
+    padding: 60px 40px;
     margin-top: -20px;
-
     font-family: $aleo;
+
+    @media (max-width: 350px) {
+      padding: 60px 20px;
+    }
 
     .popup__title {
       font-size: 1.5rem;
       font-weight: 300;
       letter-spacing: 2px;
       margin-bottom: 40px;
+      text-align: center;
     }
     .popup__input {
       width: 90%;

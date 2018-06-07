@@ -12,8 +12,8 @@ class Popup extends React.Component {
 
         // wypisuje poprawny login i haslo zeby latwiej testowac
         console.group('Login Data');
-            console.log("correct_login@example.com");
-            console.log("C0rr3Ct_P@55w0rd");
+            console.log('correct_login@example.com');
+            console.log('C0rr3Ct_P@55w0rd');
         console.groupEnd();
     };
 
@@ -81,8 +81,8 @@ class Popup extends React.Component {
 
         const url = 'http://recruitment-api.pyt1.stg.jmr.pl/login';
         const data = {
-            "login": this.state.email,
-            "password": this.state.pass
+            'login': this.state.email,
+            'password': this.state.pass
         };
 
         fetch(url, {
@@ -137,15 +137,15 @@ class Popup extends React.Component {
                 <h3 className='popup__title'>Are you a Raspberry Knight?</h3>
                 <input
                     className='popup__input'
-                    type="email"
-                    name="email"
+                    type='email'
+                    name='email'
                     placeholder='Email'
                     onInput={this.updateEmail}
                 />
                 <input
                     className='popup__input'
-                    type="password"
-                    name="password"
+                    type='password'
+                    name='password'
                     placeholder='Password'
                     onInput={this.updatePass}
                 />
