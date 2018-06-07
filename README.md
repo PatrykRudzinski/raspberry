@@ -1,6 +1,6 @@
-#[Live](https://patrykrudzinski.github.io/raspberry/.)
+# [Live](https://patrykrudzinski.github.io/raspberry/.)
 
-###to run in developer mode:
+### to run in developer mode:
 * fork and download
 * in _index.html_ change script path from _build/js/app.js_ to _js/app.js_
 * in terminal
