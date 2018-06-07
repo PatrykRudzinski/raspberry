@@ -22552,7 +22552,7 @@ var Popup = function (_React$Component) {
 
         _this.sendData = function () {
 
-            var url = 'http://recruitment-api.pyt1.stg.jmr.pl/login';
+            var url = 'https://recruitment-api.pyt1.stg.jmr.pl/login';
             var data = {
                 'login': _this.state.email,
                 'password': _this.state.pass
