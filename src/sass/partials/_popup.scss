@@ -100,6 +100,23 @@
       &:hover {
         transform: scale(1.01);
       }
+
+      .popup__loader {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid rgba(#fff, 0);
+        border-right: 2px solid rgba(#fff, 0.7);
+        animation: loaderRotate 1s 0s infinite linear;
+        margin: -5px auto;
+      }
+
+      @keyframes loaderRotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     }
   }
 }
+

@@ -7,7 +7,8 @@ class Popup extends React.Component {
         this.state = {
             email: '',
             pass: '',
-            errors: []
+            errors: [],
+            loader: false
         };
 
         // wypisuje poprawny login i haslo zeby latwiej testowac
@@ -39,7 +40,12 @@ class Popup extends React.Component {
 
         // funkcja validate zwraca true jesli wszystk ok,
         // w innym przypadku uzupelnia state o błedy
-        this.validate() && this.sendData(e);
+        if(this.validate()) {
+            this.setState({
+                loader: true
+            });
+            this.sendData(e);
+        }
 
     };
 
@@ -92,24 +98,28 @@ class Popup extends React.Component {
             },
             body: JSON.stringify(data)
         })
+            .then( res => res.json())
             .then( res => {
-            return res.json();
-        })
-            .then( res => {
-            if(res.status !== 'ok') {
-                this.setState({
-                    errors: [res.message]
-                })
-            } else {
-                this.props.closePopup();
-                console.log(res.message);
-            }
+
+                this.setState({loader: false});
+
+                if(res.status !== 'ok') {
+                    this.setState({errors: [res.message]});
+                } else {
+
+                    this.props.closePopup();
+                    console.log(res.message);
+                }
+
         })
             .catch( error => {
+
                 this.setState({
-                    errors: ['* Unable to connect with database']
+                    errors: ['* Unable to connect with database'],
+                    loader: false
                 });
                 console.log(console.error(error));
+
             })
     };
 
@@ -150,7 +160,9 @@ class Popup extends React.Component {
                     onInput={this.updatePass}
                 />
                 {errors.length ? errorsContainer : null}
-                <button className='popup__btn' type='submit'>Log in</button>
+                <button className='popup__btn' type='submit'>
+                    {this.state.loader ? <div className={'popup__loader'}></div> : 'Log in'}
+                </button>
             </form>
         </div>
     };
