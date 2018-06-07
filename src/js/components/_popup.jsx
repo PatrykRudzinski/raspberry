@@ -79,7 +79,7 @@ class Popup extends React.Component {
 
     sendData = () => {
 
-        const url = 'http://recruitment-api.pyt1.stg.jmr.pl/login';
+        const url = 'https://recruitment-api.pyt1.stg.jmr.pl/login';
         const data = {
             'login': this.state.email,
             'password': this.state.pass
