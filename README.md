@@ -6,3 +6,5 @@
 * in terminal
     * npm i
     * npm start
+    
+### during logging proper email and password is displayed in console

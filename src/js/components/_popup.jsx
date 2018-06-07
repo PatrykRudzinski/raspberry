@@ -17,7 +17,7 @@ class Popup extends React.Component {
         console.groupEnd();
     };
 
-    updateEmail = (e) => {
+    updateEmail = e => {
 
         this.setState({
             email: e.target.value
@@ -25,7 +25,7 @@ class Popup extends React.Component {
 
     };
 
-    updatePass = (e) => {
+    updatePass = e => {
 
         this.setState({
             pass: e.target.value
@@ -33,7 +33,7 @@ class Popup extends React.Component {
 
     };
 
-    submitHandle = (e) => {
+    submitHandle = e => {
 
         e.preventDefault();
 
@@ -79,7 +79,7 @@ class Popup extends React.Component {
 
     sendData = () => {
 
-        const url = 'https://recruitment-api.pyt1.stg.jmr.pl/login';
+        const url = 'http://recruitment-api.pyt1.stg.jmr.pl/login';
         const data = {
             "login": this.state.email,
             "password": this.state.pass
@@ -92,10 +92,10 @@ class Popup extends React.Component {
             },
             body: JSON.stringify(data)
         })
-            .then(function(res) {
+            .then( res => {
             return res.json();
         })
-            .then((res)=> {
+            .then( res => {
             if(res.status !== 'ok') {
                 this.setState({
                     errors: [res.message]
@@ -104,7 +104,13 @@ class Popup extends React.Component {
                 this.props.closePopup();
                 console.log(res.message);
             }
-        });
+        })
+            .catch( error => {
+                this.setState({
+                    errors: ['* Unable to connect with database']
+                });
+                console.log(console.error(error));
+            })
     };
 
     render() {
@@ -121,12 +127,17 @@ class Popup extends React.Component {
             <form
                 action='POST'
                 className='popup__form'
+                noValidate
                 onSubmit={this.submitHandle}
             >
+                <div className='popup__close' onClick={this.props.closePopup}>
+                    <span> </span>
+                    <span> </span>
+                </div>
                 <h3 className='popup__title'>Are you a Raspberry Knight?</h3>
                 <input
                     className='popup__input'
-                    type="text"
+                    type="email"
                     name="email"
                     placeholder='Email'
                     onInput={this.updateEmail}

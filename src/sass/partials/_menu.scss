@@ -33,21 +33,24 @@
         margin-bottom: 14px;
       }
 
+      // ukrycie hamburgera
       @media (min-width: 510px) {
         display: none;
       }
     }
 
     .nav__hamburger--open {
+
       span {
         transform: scale(0);
         transform-origin: center;
-      }
-      span:first-child {
-        transform: translateY(9px) rotate(135deg);
-      }
-      span:last-child {
-        transform: translateY(-19px) rotate(-135deg);
+
+        &:first-child {
+          transform: translateY(9px) rotate(135deg);
+        }
+        &:last-child {
+          transform: translateY(-19px) rotate(-135deg);
+        }
       }
     }
 
@@ -84,8 +87,11 @@
         opacity: 1;
       }
 
+      //media end
+
       .menu__item--icon {
         margin-left: 35px;
+
         @media (max-width: 600px) {
           display: none;
         }
@@ -104,15 +110,19 @@
           margin-bottom: 45px;
         }
 
+        //media end
+
         a {
           padding: 5px 9px;
           text-decoration: none;
           color: #fafafa;
           transition: 0.2s;
 
-          &:hover {
+          &:hover,
+          &:focus {
             background-color: #A83A5D;
             border-radius: 50px;
+            outline: none;
           }
         }
       }

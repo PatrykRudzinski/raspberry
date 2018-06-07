@@ -8,8 +8,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
+
+  .popup__close {
+
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    right: 3px;
+    top: 3px;
+    height: 40px;
+    width: 40px;
+
+    span {
+      background-color: #666;
+      width: 40%;
+      height: 2%;
+      border-radius: 3px;
+    }
+
+    span:first-child {
+      margin-top: 16px;
+      transform: rotate(135deg);
+    }
+
+    span:last-child {
+      margin-bottom: 14px;
+      transform: translateY(-10px) rotate(-135deg);
+    }
+  }
 
   .popup__form {
+    position: relative;
     background-color: #fefefe;
     display: flex;
     flex-direction: column;

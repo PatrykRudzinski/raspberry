@@ -33,8 +33,11 @@ class App extends React.Component {
     };
 }
 
+document.addEventListener('DOMContentLoaded', function () {
 
-ReactDOM.render(
-    <App/>,
-    document.getElementById('app')
-);
+    ReactDOM.render(
+        <App/>,
+        document.getElementById('app')
+    );
+
+});

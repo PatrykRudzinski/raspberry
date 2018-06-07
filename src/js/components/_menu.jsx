@@ -9,7 +9,7 @@ class Menu extends React.Component {
         }
     }
 
-    handleBurger = () => {
+    toggleMenu = () => {
         this.setState({
             menuOpened: !this.state.menuOpened
         })
@@ -20,7 +20,7 @@ class Menu extends React.Component {
                 <nav className={'nav'}>
                     <div className={this.state.menuOpened ?
                         'nav__hamburger nav__hamburger--open' : 'nav__hamburger'}
-                        onClick={this.handleBurger}
+                        onClick={this.toggleMenu}
                     >
                         <span></span>
                         <span></span>
@@ -28,13 +28,21 @@ class Menu extends React.Component {
                     </div>
                     <ul className={this.state.menuOpened ?
                         'nav__menu' : 'nav__menu nav__menu--collapsed'}>
-                        <li className={'menu__item'}><a href='#'>About</a></li>
-                        <li className={'menu__item'}><a href='#'>Offer</a></li>
+                        <li className={'menu__item'}>
+                            <a href='#' onClick={this.toggleMenu}>About</a>
+                        </li>
+                        <li className={'menu__item'}>
+                            <a href='#' onClick={this.toggleMenu}>Offer</a>
+                        </li>
                         <li className={'menu__item--icon'}>
                            <img src='./images/raspberry.png' alt='raspberry logo'/>
                         </li>
-                        <li className={'menu__item'}><a href='#'>Gallery</a></li>
-                        <li className={'menu__item'}><a href='#'>Contact</a></li>
+                        <li className={'menu__item'}>
+                            <a href='#' onClick={this.toggleMenu}>Gallery</a>
+                        </li>
+                        <li className={'menu__item'}>
+                            <a href='#' onClick={this.toggleMenu}>Contact</a>
+                        </li>
                     </ul>
             </nav>
         </header>

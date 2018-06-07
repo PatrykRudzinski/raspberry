@@ -61,5 +61,11 @@
     &:hover {
       background-color: rgba(#000, 0.07);
     }
+
+    &:focus {
+
+      outline: none;
+      background-color: rgba(#000, 0.5);
+    }
   }
 }
